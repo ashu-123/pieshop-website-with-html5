@@ -7,6 +7,10 @@ body {
     background-image: url('images/pattern.png');
 }
 
+h1 {
+    text-align: center;
+}
+
 #mainheader {
     background-color: #a593c2;
 }
@@ -38,6 +42,10 @@ nav {
 footer {
     clear: both;
     width: 100%;
+}
+
+a {
+    text-decoration: none;
 }
 
 header,

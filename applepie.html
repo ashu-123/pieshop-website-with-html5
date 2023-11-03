@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Welcome to Bethany' Pie Shop!</title>
+    <title>Apple Pie|Bethany's Pie Shop</title>
     <meta name="author" content="Bethany's Pie Shop">
     <meta name="description" content="Store front for Bethany's Pie Shop">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,6 +20,10 @@
             margin-right: auto;
             background-color: #e6e4d9;
             background-image: url('images/pattern.png');
+        }
+
+        h1 {
+            text-align: center;
         }
 
         #mainheader {
@@ -55,6 +59,10 @@
             width: 100%;
         }
 
+        a {
+            text-decoration: none;
+        }
+
         header,
         section,
         footer,
@@ -65,6 +73,25 @@
         figure {
             display: block;
         }
+
+        nav>ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav>ul>li {
+            float: left;
+        }
+
+        nav>ul>li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
     <script>
         function save() {
@@ -72,9 +99,9 @@
         }
         window.onload = function () {
             var favorite = document.getElementById('favorite');
-            if(window.localStorage) {
+            if (window.localStorage) {
                 var storage = window.localStorage;
-                if(storage.getItem("applepie")=='true') {
+                if (storage.getItem("applepie") == 'true') {
                     favorite.innerHTML = "Apple Pie is my favorite";
                 }
             }
@@ -85,16 +112,26 @@
 <body>
     <header id="mainheader">
         <nav>
-
-            <img src="images/cake.svg" height="55" />
+            <ul>
+                <li><img src="images/cake.svg" height="55" /></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pieoverview.html">All Pies</a></li>
+            </ul>
         </nav>
     </header>
 
     <div style="width:1000px;margin-left: auto;margin-right: auto;">
         <aside id="leftmenu">
-            <img src="images/bethanylogo.png" />
+            <a href="index.html"><img src="images/bethanylogo.png" /></a>
             <header>
                 <h4 style="text-align: center;">Browse our pies</h4>
+                <ul>
+                    <li><a href="pieoverview.html">All Pies</a></li>
+                    <li><a href="cheesecakes.html">Cheese cakes</a></li>
+                    <li><a href="fruitpies.html">Fruit Pies</a></li>
+                    <li><a href="seasonalpies.html">Seasonal Pies</a></li>
+                    <li><a href="index.html#promos">Weekly promotions</a></li>
+                </ul>
             </header>
             <input type="search" class="searchbox" placeholder="Search our store" />
 
@@ -102,7 +139,7 @@
         <main id="main">
             <article>
                 <header>
-                    <h1 style="font-size:35px;color:#a593c2">Apple pie</h1>
+                    <h1 style="font-size:35px;color:#a593c2;">Apple pie</h1>
                 </header>
                 <figure>
                     <a href="images/products/applepie.jpg" target="_blank">
@@ -134,10 +171,10 @@
                         Shop!
                     </p>
                     <p>
-                        <blockquote>
-                            This recipe has been in our family for generations. We hope you enjoy this pie as we do -
-                            Bethany
-                        </blockquote>
+                    <blockquote>
+                        This recipe has been in our family for generations. We hope you enjoy this pie as we do -
+                        Bethany
+                    </blockquote>
                     </p>
 
                     <p><small>Note that some ingredients make be are dangerous if you have certain allergies. See the
@@ -194,13 +231,16 @@
 
             </article>
 
-           
+
         </main>
 
         <footer>
-            <p>Our address is <address>Bethany's Pie Shop - Bakery Street 555 Brussels Belgium</address>
+            <p>Our address is
+            <address>Bethany's Pie Shop - Bakery Street 555 Brussels Belgium</address>
             </p>
-            <small>2020 Bethany's Pie Shop - All rights reserved</small>
+            <p>Contact us via <a href="mailto:info@bethanypieshop.com">email</a></p>
+            <small>&copy;2023 Bethany's Pie Shop - All rights reserved</small>
+            <p><small><a href="https://www.google.com">Google some pies</a></small></p>
         </footer>
     </div>
 
