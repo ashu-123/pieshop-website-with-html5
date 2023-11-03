@@ -65,6 +65,25 @@
         figure {
             display: block;
         }
+
+        nav>ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav>ul>li {
+            float: left;
+        }
+
+        nav>ul>li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
     <script>
         function save() {
@@ -72,9 +91,9 @@
         }
         window.onload = function () {
             var favorite = document.getElementById('favorite');
-            if(window.localStorage) {
+            if (window.localStorage) {
                 var storage = window.localStorage;
-                if(storage.getItem("applepie")=='true') {
+                if (storage.getItem("applepie") == 'true') {
                     favorite.innerHTML = "Apple Pie is my favorite";
                 }
             }
@@ -85,8 +104,11 @@
 <body>
     <header id="mainheader">
         <nav>
-
-            <img src="images/cake.svg" height="55" />
+            <ul>
+                <li><img src="images/cake.svg" height="55" /></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pieoverview.html">All Pies</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -134,10 +156,10 @@
                         Shop!
                     </p>
                     <p>
-                        <blockquote>
-                            This recipe has been in our family for generations. We hope you enjoy this pie as we do -
-                            Bethany
-                        </blockquote>
+                    <blockquote>
+                        This recipe has been in our family for generations. We hope you enjoy this pie as we do -
+                        Bethany
+                    </blockquote>
                     </p>
 
                     <p><small>Note that some ingredients make be are dangerous if you have certain allergies. See the
@@ -194,11 +216,12 @@
 
             </article>
 
-           
+
         </main>
 
         <footer>
-            <p>Our address is <address>Bethany's Pie Shop - Bakery Street 555 Brussels Belgium</address>
+            <p>Our address is
+            <address>Bethany's Pie Shop - Bakery Street 555 Brussels Belgium</address>
             </p>
             <p>Contact us via <a href="mailto:info@bethanypieshop.com">email</a></p>
             <small>&copy;2023 Bethany's Pie Shop - All rights reserved</small>
