@@ -7,6 +7,10 @@ body {
     background-image: url('images/pattern.png');
 }
 
+h1 {
+    text-align: center;
+}
+
 #mainheader {
     background-color: #a593c2;
 }
