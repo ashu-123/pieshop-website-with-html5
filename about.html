@@ -58,12 +58,15 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe> -->
                 <p>Welcome to Bethany's Pie shop. You can find our video below.</p>
-                <video controls>Your browser doesn't support video streaming
+                <video id="beth-video">Your browser doesn't support video streaming
                     <source src="media/baking.mp4" type="video/mp4">
                     <source src="media/baking.webm" type="video/webm">
                     <track src="media/baking.vtt" srclang="en" kind="subtitles" label="English" default/>
                     <track src="media/baking-es.vtt" srclang="es" kind="subtitles" label="Spanish" />
                 </video>
+                <button id="play">Play</button>
+                <button id="pause">Pause</button>
+                <button id="stop">Stop</button>
                 <audio controls>Your browser doesn't support audio streaming
                     <source src="media/breadsandcake.mp3" type="audio/mp3"/>
                     <source src="media/breadsandcake.ogg" type="audio/ogg"/>
@@ -83,5 +86,21 @@
     </div>
 
 </body>
-
+<script type="text/javascript">
+    let playButton = document.getElementById('play');
+    let pauseButton = document.getElementById('pause');
+    let stopButton = document.getElementById('stop');
+    let bethVideo = document.getElementById('beth-video');
+    playButton.addEventListener("click", function() {
+        bethVideo.play();
+    });
+    pauseButton.addEventListener("click", function() {
+        bethVideo.pause();
+    });
+    stopButton.addEventListener("click", function() {
+        bethVideo.pause();
+        bethVideo.currentTime=0;
+    
+    });
+</script>
 </html>
