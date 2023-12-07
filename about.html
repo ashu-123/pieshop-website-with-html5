@@ -67,6 +67,9 @@
                 <button id="play">Play</button>
                 <button id="pause">Pause</button>
                 <button id="stop">Stop</button>
+                <div>
+                    Current Time: <span id="timeDisplay"></span> seconds.
+                </div>
                 <audio controls>Your browser doesn't support audio streaming
                     <source src="media/breadsandcake.mp3" type="audio/mp3"/>
                     <source src="media/breadsandcake.ogg" type="audio/ogg"/>
@@ -91,6 +94,13 @@
     let pauseButton = document.getElementById('pause');
     let stopButton = document.getElementById('stop');
     let bethVideo = document.getElementById('beth-video');
+    let timeDisplay = document.getElementById('timeDisplay');
+    bethVideo.addEventListener("timeupdate", function() {
+        timeDisplay.innerText = Math.floor(bethVideo.currentTime);
+    });
+    bethVideo.addEventListener("ended", function() {
+        bethVideo.currentTime = 0;
+    });
     playButton.addEventListener("click", function() {
         bethVideo.play();
     });
