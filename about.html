@@ -53,10 +53,30 @@
 
         </aside>
         <main id="main">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/rhiIkg_PnxY?si=uwxGdwNeYFnPU9gX"
+            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/rhiIkg_PnxY?si=uwxGdwNeYFnPU9gX"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+                allowfullscreen></iframe> -->
+                <p>Welcome to Bethany's Pie shop. You can find our video below.</p>
+                <video id="beth-video">Your browser doesn't support video streaming
+                    <source src="media/baking.mp4" type="video/mp4">
+                    <source src="media/baking.webm" type="video/webm">
+                    <track src="media/baking.vtt" srclang="en" kind="subtitles" label="English" default/>
+                    <track src="media/baking-es.vtt" srclang="es" kind="subtitles" label="Spanish" />
+                </video>
+                <button id="play">Play</button>
+                <button id="pause">Pause</button>
+                <button id="stop">Stop</button>
+                <div>
+                    Current Time: <span id="timeDisplay"></span> seconds.
+                </div>
+                <audio controls>Your browser doesn't support audio streaming
+                    <source src="media/breadsandcake.mp3" type="audio/mp3"/>
+                    <source src="media/breadsandcake.ogg" type="audio/ogg"/>
+                    <source src="media/breadsandcake.wav" type="audio/wav"/> 
+                </audio>
+                <!-- <video src="media/baking.mp4" controls>Your browser doesn't support video streaming</video>
+                <audio src="media/breadsandcake.mp3" controls>Your browser doesn't support audio streaming</audio> -->
         </main>
         <footer>
             <p>Our address is
@@ -69,5 +89,28 @@
     </div>
 
 </body>
-
+<script type="text/javascript">
+    let playButton = document.getElementById('play');
+    let pauseButton = document.getElementById('pause');
+    let stopButton = document.getElementById('stop');
+    let bethVideo = document.getElementById('beth-video');
+    let timeDisplay = document.getElementById('timeDisplay');
+    bethVideo.addEventListener("timeupdate", function() {
+        timeDisplay.innerText = Math.floor(bethVideo.currentTime);
+    });
+    bethVideo.addEventListener("ended", function() {
+        bethVideo.currentTime = 0;
+    });
+    playButton.addEventListener("click", function() {
+        bethVideo.play();
+    });
+    pauseButton.addEventListener("click", function() {
+        bethVideo.pause();
+    });
+    stopButton.addEventListener("click", function() {
+        bethVideo.pause();
+        bethVideo.currentTime=0;
+    
+    });
+</script>
 </html>
