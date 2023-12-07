@@ -58,7 +58,10 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe> -->
                 <p>Welcome to Bethany's Pie shop. You can find our video below.</p>
-                <video src="media/baking.mp4" controls>Your browser doesn't support video streaming</video>
+                <video controls>Your browser doesn't support video streaming
+                    <source src="media/baking.mp4" type="video/mp4">
+                    <source src="media/baking.webm" type="video/webm">
+                </video>
                 <audio controls>Your browser doesn't support audio streaming
                     <source src="media/breadsandcake.mp3" type="audio/mp3"/>
                     <source src="media/breadsandcake.ogg" type="audio/ogg"/>
