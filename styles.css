@@ -39,6 +39,10 @@ nav {
     margin-bottom: 20px;
 }
 
+#main video {
+    width: 100%;
+}
+
 footer {
     clear: both;
     width: 100%;
